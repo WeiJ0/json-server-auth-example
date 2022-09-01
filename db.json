@@ -1,0 +1,49 @@
+{
+  "users": [
+    {
+      "email": "test@gmail.com",
+      "password": "$2a$10$cZOvDZWPcJltEM4O2g4g7.yqbstn52rCryTL/JRb4LiwXL0u663Ni",
+      "id": 4
+    },
+    {
+      "email": "olivier@mail.com",
+      "password": "$2a$10$io3wEhez5DgB1Kmhjj9bouEE8zuXFSiRMP9b4LZG4SYcPSPHcJAvK",
+      "id": 5
+    }
+  ],
+  "products": [
+    {
+      "name": "test",
+      "price": 999,
+      "color": "red",
+      "id": 1
+    },
+    {
+      "name": "test",
+      "price": 999,
+      "color": "red",
+      "id": 2
+    },
+    {
+      "name": "test",
+      "price": 999,
+      "color": "red",
+      "id": 3
+    }
+  ],
+  "carts": [
+    {
+      "pid": 3,
+      "id": 1
+    },
+    {
+      "pid": 3,
+      "id": 2
+    },
+    {
+      "pid": 3,
+      "count": 1,
+      "id": 4
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "devDependencies": {
+    "json-server": "^0.17.0",
+    "json-server-auth": "^2.1.0"
+  },
+  "name": "hexschool-json-server-auth",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "json-server-auth db.json -r routes.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "WeiJ",
+  "license": "ISC",
+  "description": ""
+}
