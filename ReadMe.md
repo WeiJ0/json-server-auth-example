@@ -28,7 +28,7 @@ const PORT: {port}
 
 #### 註冊
 
-```json
+```js
 -POST /signup/
 
 // Request
@@ -51,7 +51,7 @@ const PORT: {port}
 
 #### 登入
 
-```json
+```js
 -POST /login/
 
 // Request
@@ -72,7 +72,7 @@ const PORT: {port}
 
 #### 修改會員資料
 
-```json
+```js
 -PATCH /users/{userId}
 Header Authorization: Bearer {Token}
 
@@ -93,7 +93,7 @@ Header Authorization: Bearer {Token}
 
 #### 刪除會員資料 (無法恢復)
 
-```json
+```js
 -DELETE /users/{userId}
 Header Authorization: Bearer {Token}
 
@@ -109,7 +109,7 @@ Header Authorization: Bearer {Token}
 
 #### 商品全部列表
 
-```json
+```js
 -GET /api/products/all
 
 // Responese
@@ -139,7 +139,7 @@ Header Authorization: Bearer {Token}
 
 #### 商品某分類列表
 
-```json
+```js
 -GET /api/products/:category
 
 -GET /api/products/html
@@ -160,7 +160,7 @@ Header Authorization: Bearer {Token}
 
 #### 新增商品
 
-```json
+```js
 -POST /admin/products/
 Header Authorization: Bearer {Token}
 
@@ -188,7 +188,7 @@ Header Authorization: Bearer {Token}
 
 #### 修改商品
 
-```json
+```js
 -PATCH /admin/products/{product_id}
 Header Authorization: Bearer {Token}
 
@@ -213,7 +213,7 @@ Header Authorization: Bearer {Token}
 
 #### 刪除商品
 
-```json
+```js
 -DELETE /admin/products/{product_id}
 Header Authorization: Bearer {Token}
 
@@ -232,7 +232,7 @@ Header Authorization: Bearer {Token}
 
 #### 取得購物車列表
 
-```json
+```js
 -GET /api/carts/
 Header Authorization: Bearer {Token}
 [備註] 原應列出所有 carts 資料，但於 server.js :118 做自定義輸出，只產出該 Token User 的項目
@@ -252,7 +252,7 @@ Header Authorization: Bearer {Token}
 
 #### 新增購物車項目
 
-```json
+```js
 -POST /api/carts/
 Header Authorization: Bearer {Token}
 
@@ -279,7 +279,7 @@ Header Authorization: Bearer {Token}
 
 #### 修改購物車項目
 
-```json
+```js
 -PATCH /api/carts/{:itemId}
 Header Authorization: Bearer {Token}
 
@@ -305,7 +305,7 @@ Header Authorization: Bearer {Token}
 
 #### 刪除購物車項目
 
-```json
+```js
 -DELETE /api/carts/{:itemId}
 Header Authorization: Bearer {Token}
 
@@ -322,7 +322,7 @@ Header Authorization: Bearer {Token}
 <h3 id="Product">訂單</h3>
 
 #### 取得訂單列表
-```json
+```js
 -GET /api/orders/
 Header Authorization: Bearer {Token}
 [備註] 原應列出所有 orders 資料，但於 server.js :126 做自定義輸出，只產出該 Token User 的項目
@@ -341,7 +341,7 @@ Header Authorization: Bearer {Token}
 ```
 
 #### 新增訂單
-```json
+```js
 -POST /api/orders/
 Header Authorization: Bearer {Token}
 [備註] 會在 carts 資料集中計算該 userId 的 product 總額，產生訂單後移除 carts 資料集 //server.js :54
@@ -372,7 +372,7 @@ Header Authorization: Bearer {Token}
 
 
 #### 訂單付款
-```json
+```js
 -POST /api/pay/{:orderId}
 Header Authorization: Bearer {Token}
 [備註] 會在 carts 資料集中計算該 userId 的 product 總額，產生訂單後移除 carts 資料集 //server.js :54
