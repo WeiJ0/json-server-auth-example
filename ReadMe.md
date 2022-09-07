@@ -24,6 +24,11 @@ npm start
 const PORT: {port}
 ```
 
+## Token 時效性
+```
+為 1 小時有效，過期顯示 "jwt expired"，需重新 POST /login/ 取得
+```
+
 ## 預設 API 說明
 
 <h3 id="Member">會員</h3>
@@ -64,7 +69,7 @@ const PORT: {port}
 
 // Responese
 {
-    "accessToken": Bearer Token,
+    "accessToken": [Bearer Token],
     "user": {
         "email": email,
         "id": 系統產生 id，之後的 userId
@@ -76,7 +81,7 @@ const PORT: {port}
 
 ```js
 -PATCH /users/{userId}
-Header Authorization: Bearer {Token}
+Header Authorization: Bearer [Token]
 
 // Request
 {
