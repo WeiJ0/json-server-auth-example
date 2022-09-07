@@ -3,47 +3,187 @@
     {
       "email": "test@gmail.com",
       "password": "$2a$10$cZOvDZWPcJltEM4O2g4g7.yqbstn52rCryTL/JRb4LiwXL0u663Ni",
-      "id": 4
+      "id": 1
     },
     {
       "email": "olivier@mail.com",
       "password": "$2a$10$io3wEhez5DgB1Kmhjj9bouEE8zuXFSiRMP9b4LZG4SYcPSPHcJAvK",
-      "id": 5
-    }
-  ],
-  "products": [
-    {
-      "name": "test",
-      "price": 999,
-      "color": "red",
-      "id": 1
-    },
-    {
-      "name": "test",
-      "price": 999,
-      "color": "red",
       "id": 2
     },
     {
-      "name": "test",
-      "price": 999,
-      "color": "red",
+      "email": "test123@gmail.com",
+      "password": "$2a$10$EfnnjwXtU.A2SnJP4UHszuB0hPqlEyNLpDiVXRAnyLjPcOauPsWJm",
       "id": 3
+    }
+  ],
+  "todos": [],
+  "products": [
+    {
+      "name": "使用 HTML、CSS 開發一個網站",
+      "price": 1200,
+      "category": "html",
+      "platform": [
+        "Udemy, Teachable"
+      ],
+      "id": 1,
+      "qty": 2
+    },
+    {
+      "name": "使用 jQuery 打造互動性網頁動畫效果",
+      "price": 1300,
+      "category": "js",
+      "platform": [
+        "Udemy, Teachable"
+      ],
+      "id": 2,
+      "qty": 1
+    },
+    {
+      "name": "JavaScript 前端修練全攻略",
+      "price": 2900,
+      "category": "js",
+      "platform": [
+        "Udemy, Teachable"
+      ],
+      "id": 3
+    },
+    {
+      "name": "JavaScript 核心篇",
+      "price": 3500,
+      "category": "js",
+      "platform": [
+        "Udemy, Teachable"
+      ],
+      "id": 4
+    },
+    {
+      "name": "一變應萬變的響應式網頁設計",
+      "price": 2600,
+      "category": "css",
+      "platform": [
+        "Udemy, Teachable"
+      ],
+      "id": 5
+    },
+    {
+      "name": "Bootstrap 5 網頁切版整合術",
+      "price": 2800,
+      "category": "css",
+      "platform": [
+        "Udemy, Teachable"
+      ],
+      "id": 6
+    },
+    {
+      "name": "使用 HTML、CSS 開發一個網站",
+      "price": 1200,
+      "category": "html",
+      "platform": [
+        "Udemy, Teachable"
+      ],
+      "id": 7
+    },
+    {
+      "name": "使用 HTML、CSS 開發一個網站",
+      "price": 12000,
+      "category": "html",
+      "platform": [
+        "Udemy, Teachable"
+      ],
+      "id": 8
+    },
+    {
+      "name": "使用 HTML、CSS 開發一個網站",
+      "price": 1200,
+      "category": "html",
+      "platform": [
+        "Udemy, Teachable"
+      ],
+      "id": 9
+    },
+    {
+      "name": "使用 HTML、CSS 開發一個網站",
+      "price": 1200,
+      "category": "html",
+      "platform": [
+        "Udemy, Teachable"
+      ],
+      "id": 10
+    },
+    {
+      "name": "使用 HTML、CSS 開發一個網站",
+      "price": 1200,
+      "category": "html",
+      "platform": [
+        "Udemy, Teachable"
+      ],
+      "id": 11
     }
   ],
   "carts": [
     {
-      "pid": 3,
+      "id": 1,
+      "product_id": 1,
+      "qty": 1,
+      "userId": 1
+    }
+  ],
+  "orders": [
+    {
+      "userId": 3,
+      "detail": [
+        {
+          "name": "使用 HTML、CSS 開發一個網站",
+          "price": 1200,
+          "category": "html",
+          "platform": [
+            "Udemy, Teachable"
+          ],
+          "id": 1,
+          "qty": 2
+        },
+        {
+          "name": "使用 jQuery 打造互動性網頁動畫效果",
+          "price": 1300,
+          "category": "js",
+          "platform": [
+            "Udemy, Teachable"
+          ],
+          "id": 2,
+          "qty": 1
+        }
+      ],
+      "total": 3700,
+      "paid": true,
       "id": 1
     },
     {
-      "pid": 3,
+      "userId": 3,
+      "detail": [
+        {
+          "name": "使用 HTML、CSS 開發一個網站",
+          "price": 1200,
+          "category": "html",
+          "platform": [
+            "Udemy, Teachable"
+          ],
+          "id": 1,
+          "qty": 2
+        },
+        {
+          "name": "使用 jQuery 打造互動性網頁動畫效果",
+          "price": 1300,
+          "category": "js",
+          "platform": [
+            "Udemy, Teachable"
+          ],
+          "id": 2,
+          "qty": 1
+        }
+      ],
+      "total": 3700,
+      "paid": false,
       "id": 2
-    },
-    {
-      "pid": 3,
-      "count": 1,
-      "id": 4
     }
   ]
 }
