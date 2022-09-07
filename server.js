@@ -12,14 +12,15 @@ const rules = auth.rewriter({
   users: 600,
   "/api/*": "/$1",
   "/products/all": "/products/",
-  "/products/:category": "/products?category=:category",
-  "/carts/*": "/640/carts/",
-  "/orders/*": "/640/orders/",
+  "/products/category/:category": "/products?category=:category",
+  "/admin/*": "/664/$1",
+  "/carts/*": "/640/carts/$1",
+  "/orders/*": "/640/orders/$1",
   "/pay/:orderid": "/640/orders/:orderid",
 });
 
 // 產品
-server.post("/api/products/", (req, res, next) => {
+server.post("/api/admin/products/", (req, res, next) => {
   const { name, price, category } = req.body;
 
   // 新增時檢查欄位
@@ -34,11 +35,11 @@ server.post("/api/products/", (req, res, next) => {
   }
   next();
 });
-
+// 購物車
 server.post("/api/carts/", (req, res, next) => {
-  const { product_id, qty } = req.body;
-  if (!product_id) {
-    res.json({ success: false, message: "需輸入商品識別碼" });
+  const { productId, qty } = req.body;
+  if (!productId) {
+    res.json({ success: false, message: "需輸入商品id" });
     return;
   }
 
@@ -69,7 +70,7 @@ server.post("/api/orders/", (req, res, next) => {
 
   // 取出目前登入 User 購物車資料取出中的 ProductID
   const cartsProductIDs = Array.from(
-    new Set(carts.map((item) => item.product_id))
+    new Set(carts.map((item) => item.productId))
   );
 
   // 取出在購物車中的商品資料
@@ -81,15 +82,15 @@ server.post("/api/orders/", (req, res, next) => {
   let calcTotal = 0;
 
   // 取得商品價格
-  const getProductsPrice = (product_id) =>
-    products.find((item) => item.id === parseInt(product_id)).price || 0;
+  const getProductsPrice = (productId) =>
+    products.find((item) => item.id === parseInt(productId)).price || 0;
 
   // Total 計算
   carts.forEach((item) => {
     calcTotal +=
-      parseInt(getProductsPrice(item.product_id)) * parseInt(item.qty);
+      parseInt(getProductsPrice(item.productId)) * parseInt(item.qty);
 
-    let product = products.find((product) => product.id == item.product_id);
+    let product = products.find((product) => product.id == item.productId);
     product.qty = item.qty;
   });
 
@@ -167,7 +168,7 @@ router.render = (req, res) => {
 
   // 自定義輸出結果，除原本的物件外多一個屬性 success
   res.json({
-    success: true,
+    success: res.statusCode >= 400 ? false : true,
     message: res.locals.data,
   });
 };

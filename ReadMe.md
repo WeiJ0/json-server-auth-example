@@ -140,9 +140,8 @@ Header Authorization: Bearer {Token}
 #### 商品某分類列表
 
 ```js
--GET /api/products/:category
-
--GET /api/products/html
+-GET /api/products/category/{:category}
+-GET /api/products/category/html
 
 // Response
 [
@@ -161,7 +160,7 @@ Header Authorization: Bearer {Token}
 #### 新增商品
 
 ```js
--POST /admin/products/
+-POST /api/admin/products/
 Header Authorization: Bearer {Token}
 
 // Request
@@ -169,7 +168,7 @@ Header Authorization: Bearer {Token}
     "name": name,
     "price": price,
     "category": category,
-    "platform": Platform,
+    // ... 可自訂義欄位
 }
 
 // Response
@@ -179,7 +178,6 @@ Header Authorization: Bearer {Token}
         "name": name,
         "price": price,
         "category": category,
-        "platform": Platform,
         // ... 可自訂義欄位
         "id": 系統自動產生
     }
@@ -189,7 +187,7 @@ Header Authorization: Bearer {Token}
 #### 修改商品
 
 ```js
--PATCH /admin/products/{product_id}
+-PATCH /api/admin/products/{productId}
 Header Authorization: Bearer {Token}
 
 // Request
@@ -197,7 +195,7 @@ Header Authorization: Bearer {Token}
     "name": name,
     "price": price,
     "category": category,
-    "platform": Platform,
+    // ... 可自訂義欄位
 }
 
 // Response
@@ -214,7 +212,7 @@ Header Authorization: Bearer {Token}
 #### 刪除商品
 
 ```js
--DELETE /admin/products/{product_id}
+-DELETE /api/admin/products/{productId}
 Header Authorization: Bearer {Token}
 
 // Response
@@ -242,7 +240,7 @@ Header Authorization: Bearer {Token}
     "message":[
        {
             "id": 2,
-            "product_id": 3,
+            "productId": 3,
             "qty": 2,
             "userId": 3
         },
@@ -258,7 +256,7 @@ Header Authorization: Bearer {Token}
 
 // Request
 {
-    "product_id": 商品 id 必填,
+    "productId": 商品 id 必填,
     "userId": userId 必填,
     "qty": 數量 (沒有填則為 1)
 }
@@ -285,19 +283,17 @@ Header Authorization: Bearer {Token}
 
 // Request
 {
-    "product_id": 商品 id 必填,
-    "qty": 數量 (沒有填則為 1) 必填
+    "productId": 商品 id 必填,
+    "qty": 數量 必填
 }
 
 // Response
 {
     "success": true,
     "message": {
-        "name": name,
-        "price": price,
-        "category": category,
-        "platform": Platform,
-        // ... 可自訂義欄位
+        "productId": 商品id,
+        "userId": userId,
+        "qty:" 數量,
         "id": 系統自動產生
     }
 }
@@ -332,7 +328,7 @@ Header Authorization: Bearer {Token}
     "message":[
        {
             "id": 2,
-            "product_id": 3,
+            "productId": 3,
             "qty": 2,
             "userId": 3
         },
@@ -369,13 +365,10 @@ Header Authorization: Bearer {Token}
 }
 ```
 
-
-
 #### 訂單付款
 ```js
--POST /api/pay/{:orderId}
+-PUT /api/pay/{:orderId}
 Header Authorization: Bearer {Token}
-[備註] 會在 carts 資料集中計算該 userId 的 product 總額，產生訂單後移除 carts 資料集 //server.js :54
 // Response
 {
     "success": true,
