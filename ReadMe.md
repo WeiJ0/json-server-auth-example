@@ -2,9 +2,9 @@
 
 ## 參考說明
 
-[json-server](https://weij0.github.io/Web/docs/Json-Server/intro)  
-[json-server 進階運用](https://weij0.github.io/Web/docs/Json-Server/extra)  
-[json-server-auth](https://weij0.github.io/Web/docs/Json-Server/json-server-auth)
+[json-server](https://blog.weij0.me/blog/Json-server/JsonServerIntro)  
+[json-server 進階運用](https://blog.weij0.me/blog/Json-server/JsonServerExtra)  
+[json-server-auth](https://blog.weij0.me/blog/Json-server/JsonServerAuth)
 
 ## 安裝方式
 
